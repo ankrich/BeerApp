@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Getting Started: Handling Form Submission</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<h1>Add Item to the Inventory</h1>
+<form action="#" th:action="@{/beer}" th:object="${beer}" method="post">
+    <p>Id: <input type="text" th:field="*{id}" /></p>
+    <p>Beer: <input type="text" th:field="*{name}" /></p>
+    <p><input type="submit" value="Submit" /><input type="reset" value="Reset" /></p>
+</form>
+
+<p>
+<h2> Item just addded</h2>
+<p th:text="'id: ' + ${beer.id}" />
+<p th:text="'Beer Name: ' + ${beer.name}" />
+</p>
+
+
+<a th:href="@{/AllBeers}">Show all listed times</a>
+
+
+
+</body>
+</html>
